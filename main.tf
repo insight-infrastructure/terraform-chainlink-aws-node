@@ -69,7 +69,7 @@ resource "aws_instance" "this" {
 
 resource "aws_eip" "public_ip" {
   count = var.associate_eip && var.create ? 1 : 0
-  name  = var.name
+  tags  = var.tags
 }
 
 resource "aws_eip_association" "main_ip" {
